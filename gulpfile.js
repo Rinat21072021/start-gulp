@@ -23,6 +23,7 @@ function styles() {
 function scripts() {
     return src([
         // 'node_modules/swiper/swiper-bundle.js',
+        'node_modules/jquery/dist/jquery.js',
         'app/js/main.js',
         // "app/js/*.js",
         // '!app/js/main.min.js'
@@ -37,7 +38,7 @@ function scripts() {
 function watching() {
     //следит за изменениями.
     watch(['app/scss/style.scss'], styles)
-    watch(['app/js/main.js'], scripts)
+    watch(['app/js/main.js', '!app/js/main.min.js'], scripts)
     watch(['app/*.html']).on('change', browserSync.reload)
 }
 
